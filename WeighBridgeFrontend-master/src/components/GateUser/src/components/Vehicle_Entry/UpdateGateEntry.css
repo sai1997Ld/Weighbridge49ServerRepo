@@ -1,0 +1,126 @@
+/* UpdateGateEntrys.css */
+
+/* .VehicleEntryDetailsMainContent {
+  margin-left: 100px;
+} */
+
+.user-form-label {
+  font-weight: 450;
+}
+h4.userdetail {
+  margin-bottom: 0;
+}
+
+/* To make scanner button responsive for page */
+input.tpscanner {
+  width: 85% !important;
+}
+
+/* To remove padding from each fields */
+.inputbox-padding {
+  padding-left: 0px !important;
+  /* padding-right: 0px !important; */
+}
+
+.inputbox1-padding {
+  /* padding-left: 0px !important; */
+  padding-right: 0px !important;
+}
+/* Table */
+.camview1 {
+  margin: 10px 0px 0px 0px;
+}
+.camview1 td {
+  border: 0px none;
+  padding: 0px 10px;
+}
+td .camview1 {
+  text-align: center;
+  border-radius: 5px !important;
+  position: relative;
+  width: 100% !important;
+  height: 180px !important;
+  border: 1px solid #cccccc !important;
+
+  /* margin-right: 5px; */
+}
+
+/* button for scannar image */
+.scanner_button1 {
+  border: 1px solid;
+  border-radius: 5px;
+  /* border-color: transparent !important;  */
+}
+.scanner_button1 img {
+  width: 25px;
+  height: 25px;
+}
+.scanner_button2 {
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.scanner_button2 img {
+  width: 25px;
+  height: 25px;
+}
+.scanner_button3 {
+  border: 1px solid;
+  border-radius: 5px;
+}
+.scanner_button3 img {
+  width: 25px;
+  height: 25px;
+}
+.scanner_button4 {
+  border: 1px solid;
+  border-radius: 5px;
+}
+.scanner_button4 img {
+  width: 25px;
+  height: 25px;
+}
+/* table- btn for camera Image capture*/
+.table-btn {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+/* .mysave-btn {
+  background-color: green; 
+  color: white; 
+  border: 1px solid rgb(111, 108, 108);
+  border-radius: 5px; 
+  padding: 10px 20px;
+}
+.mysave-btn:hover {
+  background-color: darkgreen; 
+}
+
+.myclear-btn {
+  background-color: gray; 
+  color: white; 
+  border: 1px solid rgb(111, 108, 108); 
+  border-radius: 5px; 
+  padding: 10px 20px; 
+}
+.myclear-btn:hover {
+  background-color: #5f5252;
+} */
+/* Swal Modal size decrease */
+
+.my-popup-class {
+  width: 400px; /* Adjust the width as needed */
+  max-width: calc(100% - 20px); /* Maximum width */
+}
+
+.my-title-class {
+  /* Custom styles for the title */
+  /* width:10px; */
+  max-width: calc(100% - 20px);
+  font-size: 20px;
+}
+
+.my-content-class {
+  /* Custom styles for the content */
+  width: 10px;
+}

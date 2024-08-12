@@ -1,0 +1,34 @@
+.daily-report-date {
+  font-weight: bold;
+}
+
+.daily-report-main-content {
+  margin-left: 210px;
+  margin-top: 7rem;
+  transition: margin-left 0.2s ease;
+}
+
+.home-sidebar:not(:hover) + .daily-report-main-content {
+  margin-left: 80px;
+}
+
+.daily_report_icon {
+  border: 2px solid #333;
+  border-radius: 50%;
+  padding: 10px;
+  color: black;
+  background-color: #f0f0f0;
+}
+
+.daily_report_icon:hover {
+  transform: scale(1.1);
+}
+
+.download-btn {
+  transition: transform 0.3s ease-in-out;
+}
+
+.download-btn:hover {
+  background-color: green;
+  transform: scale(1.1);
+}

@@ -1,0 +1,41 @@
+name: Sync Frontend to Personal Repository
+
+on:
+  push:
+    branches:
+      - master  # Change to the branch you want to monitor
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Frontend Repository
+      uses: actions/checkout@v2
+      with:
+        repository: sai1997Ld/WeighBridgeFrontend
+        token: ${{ secrets.GITHUB_TOKEN }}
+        ref: master  # Change to the branch you want to monitor
+
+    - name: Sync Frontend to Personal Repository
+      env:
+        PERSONAL_REPO_PAT: ${{ secrets.PERSONAL_REPO_PAT }}
+      run: |
+        # Configure Git
+        git config --global user.name 'giridharpatnaik183'
+        git config --global user.email 'giridharpatnaik183@gmail.com'
+
+        # Add personal repository as remote
+        git remote add personal https://giridharpatnaik183:${PERSONAL_REPO_PAT}@github.com/giridharpatnaik183/DockerizingWeighBridgeApp.git
+
+        # Fetch changes from personal repository
+        git fetch personal
+
+        # Checkout main branch
+        git checkout main
+
+        # Merge changes from team repository into main branch
+        git merge --strategy-option=theirs FETCH_HEAD || exit 0
+
+        # Push changes to personal repository
+        git push personal main --force

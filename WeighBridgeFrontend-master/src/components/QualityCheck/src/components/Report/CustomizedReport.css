@@ -1,0 +1,8 @@
+.download-btn {
+  transition: transform 0.3s ease-in-out;
+}
+
+.download-btn:hover {
+  background-color: green;
+  transform: scale(1.1);
+}

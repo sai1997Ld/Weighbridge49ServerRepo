@@ -1,0 +1,75 @@
+
+.admin-home-main-content {
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.card-gradient {
+  background-size: 200% 100%;
+  color: #fff;
+  transition: transform 0.3s ease-in-out;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 150px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}
+
+
+.card-title-home {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.card-body-home {
+  margin-top: 2rem;
+}
+
+
+.card-text-home {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card-gradient-active {
+  background: linear-gradient(to right, #36b9cc, #2a99a2);
+}
+
+.card-gradient-inactive {
+  background: linear-gradient(to right, #f8d7da, #ea8689);
+}
+
+.card-gradient-registered {
+  background: linear-gradient(to right, #f6c23e, #d9a566);
+}
+
+.card-gradient-all-users {
+  background: linear-gradient(to right, #4e73df, #224abe);
+}
+
+.card-gradient-transporters {
+  background: linear-gradient(to right, #20c997, #17a673);
+}
+
+.card-gradient-companies {
+  background: linear-gradient(to right, #827a91, #512da8);
+}
+
+.card-gradient-suppliers {
+  background: linear-gradient(to right, #ffc107, #d39e00);
+}
+
+.card-gradient-customers {
+  background: linear-gradient(to right, #fd7e14, #d65d00);
+}
+
+.fa-3x {
+  font-size: 3em;
+}

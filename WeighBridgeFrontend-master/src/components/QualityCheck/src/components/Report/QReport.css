@@ -1,0 +1,127 @@
+.quality-report-main-content {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   margin-top: 110px;
+   padding: 20px;
+ }
+ 
+ .quality-report-heading {
+   text-align: center;
+   font-size: 28px;
+   font-weight: bold;
+   margin-bottom: 20px;
+ }
+ 
+ .quality-report-table-responsive {
+   overflow-x: auto;
+   width: 100%;
+   max-width: 1200px;
+   margin-left: 60px;
+ }
+ 
+ .quality-report-table {
+   width: 100%;
+   table-layout: fixed;
+   border-collapse: collapse;
+ }
+ 
+ .quality-report-table th,
+ .quality-report-table td {
+   padding: 10px;
+   text-align: center;
+   border: 1px solid #ddd;
+ }
+ 
+ .quality-report-table th {
+   background-color: #f2f2f2;
+   font-weight: bold;
+ }
+ 
+ .quality-report-input-box {
+   width: 100%;
+   height: 40px;
+   box-sizing: border-box;
+   padding: 5px;
+   font-size: 16px;
+ }
+ 
+ .quality-report-table th:nth-last-child(-n+2),
+ .quality-report-table td:nth-last-child(-n+2) {
+   width: 80px;
+ }
+ 
+ .quality-report-upload-btn,
+ .quality-report-download-btn {
+   width: 40px;
+   height: 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: none;
+   cursor: pointer;
+   border-radius: 5px;
+   transition: background-color 0.3s ease;
+ }
+ 
+ .quality-report-upload-btn {
+   background-color: #007bff;
+   color: white;
+ }
+ 
+ .quality-report-upload-btn:hover {
+   background-color: #0056b3;
+ }
+ 
+ .quality-report-download-btn {
+   background-color: #28a745;
+   color: white;
+ }
+ 
+ .quality-report-download-btn:hover {
+   background-color: #218838;
+ }
+ 
+ .quality-report-upload-btn svg,
+ .quality-report-download-btn svg {
+   width: 20px;
+   height: 20px;
+ }
+ 
+ @media (max-width: 768px) {
+   .quality-report-main-content {
+     margin-top: 100px;
+   }
+ 
+   .quality-report-table-responsive {
+     padding: 15px;
+     overflow-x: auto;
+   }
+ 
+   .quality-report-input-box {
+     min-width: 80px;
+     max-width: 120px;;
+   }
+ 
+   .quality-report-table th,
+   .quality-report-table td {
+     width: 100px;
+   }
+ 
+   .quality-report-table th:nth-last-child(-n+2),
+   .quality-report-table td:nth-last-child(-n+2) {
+     width: 50px;
+   }
+ 
+   .quality-report-table th:nth-child(3),
+   .quality-report-table td:nth-child(3),
+   .quality-report-table th:nth-child(4),
+   .quality-report-table td:nth-child(4) {
+     width: 70px;
+   }
+ }
+ 
+ .home-sidebar.expanded + .quality-report-main-content {
+   margin-left: 220px;
+ }

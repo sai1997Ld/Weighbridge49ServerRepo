@@ -1,0 +1,90 @@
+.card-gradient-outbound {
+    /* background: linear-gradient(to right, #89f7fe, #66a6ff); */
+    background: gainsboro;
+   
+  }
+  .card-gradient-outboundd {
+    background: gainsboro;
+   
+  }
+   
+   
+  .card-gradient-inboundd {
+   background: #a0c2f1;
+   
+   
+  }
+   
+  .card-gradient-inbound {
+    background: #a0c2f1;
+   
+   
+  }
+   
+   
+   
+   
+  .printable {
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fafafa;
+  }
+   
+  .printable p {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+   
+  .printable strong {
+    color: #007bff;
+  }
+  .printable {
+    display: none;
+  }
+   
+  @media print {
+    .printable {
+      display: block;
+    }
+  }
+   
+   
+  .modal-overlay-op {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    max-width: 80%;
+    width: 100%;
+  }
+   
+  .button-container-op{
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+  }
+  .button-container-op :nth-child(1) {
+    background-color: #007bff;
+     border-radius: 8px;
+    border-width: 0cap;
+    color: #ddd;
+    width: 6%;
+  }
+   
+  .button-container-op :nth-child(2) {
+    background-color: #cc2d3d;
+    border-radius: 8px;
+    border-width: 0cap;
+    color: #ddd;
+  }
+   
+  .button-container-op .btn:hover {
+    opacity: 0.8; /* Slight transparency on hover */
+  }

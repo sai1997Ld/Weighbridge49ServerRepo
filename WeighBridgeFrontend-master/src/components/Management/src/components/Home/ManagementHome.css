@@ -1,0 +1,108 @@
+.home-header {
+  position: fixed;
+  width: 100%;
+  background-color: rgb(51, 65, 85);
+  color: white;
+  z-index: 1000;
+}
+
+.home-header-title {
+  background-color: rgb(51, 65, 85);
+  font-weight: 400;
+}
+
+.home-logo-container-1 {
+  position: relative;
+  top: 100px;
+}
+
+.home-sidebar {
+  width: 60px;
+  background-color: rgb(30, 41, 59);
+  color: #fff;
+  padding: 20px 10px;
+  padding-top: 50px;
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  height: 100%;
+  transition: width 0.2s ease;
+  overflow: hidden;
+}
+/* .home-sidebar:hover {
+  width: 200px;
+} */
+
+.rp-icon {
+  margin-left: 0.15rem;
+  margin-right: 0.15rem;
+}
+
+.sidebar-item {
+  display: flex;
+  margin-bottom: 40px;
+  height: 40px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+.sidebar-item:hover {
+  transform: scale(1.05); /* Increase the size of the element */
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.sidebar-item-text {
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #000;
+}
+/* .home-sidebar:hover .sidebar-item-text {
+  opacity: 1;
+} */
+.sidebar-icon {
+  font-size: 1.2rem;
+  color: #000;
+}
+.home-label {
+  background-color: white;
+}
+.home-card {
+  max-width: 600px;
+}
+.chart-1 {
+  background-color: white;
+}
+.chart-2 {
+  background-color: white;
+}
+.home-chart-1 {
+  max-width: 600px;
+}
+
+.home-chart-2 {
+  max-width: 600px;
+}
+
+.home-main-content {
+  margin-left: 210px;
+  transition: margin-left 0.2s ease;
+  margin-top: 8rem;
+}
+
+.home-sidebar:not(:hover) + .home-main-content {
+  margin-left: 80px;
+}
+
+.chart-name-1,
+.chart-name-2 {
+  background-color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+}

@@ -1,0 +1,19 @@
+.outbound-form-label {
+  font-weight: 450;
+}
+
+.outbound-move-left {
+  /* Adjust margins to move the element to the left */
+  margin-right: auto;
+  margin-left: 0;
+  /* margin-top: 10px; 
+  margin-bottom: 0px !important;  */
+}
+
+.inputboxOut-padding {
+  padding-left: 0px !important;
+  /* padding-right: 0px !important; */
+}
+input.outbound-scanner {
+  width: 85% !important;
+}

@@ -1,0 +1,49 @@
+.video-container-cam {
+  width: 100%;
+}
+
+.video-header-cam {
+  position: absolute;
+  top: 2%;
+  left: 10px;
+  font-weight: bold;
+  color: bisque;
+}
+
+.video-content-cam {
+  position: relative;
+}
+
+.video-content-cam img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.full-screen-button {
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  color: black;
+  background-color: grey;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.overlay-cam {
+  position: absolute;
+  bottom: 1px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.captured-image img {
+  width: 170px;
+  height: auto;
+  margin: 10px 0px;
+}

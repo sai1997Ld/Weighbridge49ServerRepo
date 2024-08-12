@@ -1,0 +1,184 @@
+.Margin-space {
+  margin-bottom: 0px !important;
+}
+
+.vehicle-table-container {
+  margin-left: auto; /* Align to the right side of the page */
+  margin-right: auto; /* Add some right margin for spacing */
+}
+
+.VehicleEntrytable {
+  margin-left: -20px;
+  /* margin-top: -20px; */
+}
+
+/* Vehicle InTimeImage */
+
+/* .image-button {
+  border: none;
+  background: none;
+  padding: 0;
+}
+ 
+.image-container {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+ 
+.green-background {
+  background-color: green;
+}
+ 
+.time-image {
+  width: 100%;
+  height: 100%;
+} */
+
+/* Vehicle OutTime Image */
+.image-button {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.image-container {
+  width: 50px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-radius: 5%; */
+}
+
+/* .red-background {
+  background-color: red;
+} */
+
+.time-image {
+  width: 80%;
+  height: 80%;
+}
+
+.vehicle-table th {
+  white-space: nowrap; /* Prevent wrapping of header cells */
+  background-color: #0077b6; /* Add a background color for visibility */
+  color: white;
+  height: 60px;
+}
+
+/* Table container */
+/* .container {
+  margin-right: 200px;
+  margin-left: auto;
+} */
+
+.vehicle-table.table-bordered,
+.vehicle-table.table-bordered th,
+.vehicle-table.table-bordered td {
+  border-color: #dee2e6; /* Adjust the color here */
+}
+
+.vehicle-table-container {
+  /* margin-left: auto; */
+  /* overflow-x: auto; */
+  padding-right: 40px;
+}
+
+.vehicle-table.table-bordered tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Slightly gray background */
+}
+
+/* Pagination button */
+
+.pagination-button {
+  /* flex: 0 0 auto; */
+  width: 350px;
+}
+
+.page-number-button {
+  background-color: #0077b6;
+  padding: 8px 12px;
+  color: white;
+}
+
+/* Hover */
+.page-number-button:hover {
+  background-color: #69c0ef;
+  cursor: pointer;
+}
+
+.forward-button {
+  /* background-color: #c2c4cb; */
+  background-color: #0077b6;
+  padding: 8px 12px;
+  color: white;
+}
+
+.forward-button:hover {
+  background-color: #69c0ef;
+  cursor: pointer;
+}
+
+.forward-double-button {
+  background-color: #0077b6;
+  padding: 8px 12px;
+  color: white;
+}
+
+.forward-double-button:hover {
+  background-color: #69c0ef;
+  cursor: pointer;
+}
+
+.backword-button {
+  /* background-color: #c2c4cb; */
+  background-color: #0077b6;
+  padding: 8px 12px;
+  color: white;
+}
+.backword-button:hover {
+  background-color: #69c0ef;
+  cursor: pointer;
+}
+
+.backword-double-button {
+  /* background-color: #c2c4cb; */
+  background-color: #0077b6;
+  padding: 8px 12px;
+  color: white;
+}
+
+.backword-double-button:hover {
+  background-color: #69c0ef;
+  cursor: pointer;
+}
+
+/* CSS for disabled buttons */
+.forward-button:disabled {
+  pointer-events: none; /* Disable click events */
+  opacity: 0.5; /* Reduce opacity for disabled appearance */
+}
+.forward-double-button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.backword-double-button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.backword-button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+/* CSS for hover effect on buttons */
+/* .forward-button:hover,
+.forward-double-button:hover {
+  background-color: initial;
+  color: initial;
+  cursor: not-allowed;
+} */
