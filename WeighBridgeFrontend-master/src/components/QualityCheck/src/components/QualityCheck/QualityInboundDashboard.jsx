@@ -62,7 +62,7 @@ function QualityInboundDashboard() {
   const fetchAllTransactions = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/getAllTransaction?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/getAllTransaction?userId=${userId}`,
         {
           credentials: "include",
         }
@@ -88,7 +88,7 @@ function QualityInboundDashboard() {
   const fetchMaterialOptions = async () => {
     try {
       const materialResponse = await fetch(
-        `http://localhost:8080/api/v1/qualities/materials?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/materials?userId=${userId}`,
         {
           credentials: "include",
         }
@@ -174,7 +174,7 @@ function QualityInboundDashboard() {
 
   const removeTransaction = async (ticketNumber) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/v1/qualities/${ticketNumber}?userId=${userId}`, {
+      const response = await fetch(`http://49.249.180.125:8080/api/v1/qualities/${ticketNumber}?userId=${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -216,7 +216,7 @@ function QualityInboundDashboard() {
     if (searchType === "ticketNo") {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/qualities/searchByTicketNo/${searchQuery}?checkQualityCompleted=false&userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/qualities/searchByTicketNo/${searchQuery}?checkQualityCompleted=false&userId=${userId}`,
           {
             credentials: "include",
           }
@@ -240,7 +240,7 @@ function QualityInboundDashboard() {
     } else if (searchType === "vehicleNo") {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/qualities/searchByVehicleNo/${searchQuery}?userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/qualities/searchByVehicleNo/${searchQuery}?userId=${userId}`,
           {
             credentials: "include",
           }
@@ -257,7 +257,7 @@ function QualityInboundDashboard() {
     } else if (searchType === "supplier") {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/qualities/searchBySupplierOrCustomer?supplierOrCustomerName=${searchQuery}&userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/qualities/searchBySupplierOrCustomer?supplierOrCustomerName=${searchQuery}&userId=${userId}`,
           {
             credentials: "include",
           }
@@ -274,7 +274,7 @@ function QualityInboundDashboard() {
     } else if (searchType === "supplierAddress") {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/qualities/searchBySupplierOrCustomer?supplierOrCustomerAddress=${searchQuery}&userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/qualities/searchBySupplierOrCustomer?supplierOrCustomerAddress=${searchQuery}&userId=${userId}`,
           {
             credentials: "include",
           }

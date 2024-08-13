@@ -31,7 +31,7 @@ const SalesDetails = ({ onConfirmTicket = () => { } }) => {
     }, [currentPage]);
 
     const fetchData = (pageNumber) => {
-        fetch(`http://localhost:8080/api/v1/sales/getAllVehicleDetails?page=${pageNumber}&userId=${userId}`, {
+        fetch(`http://49.249.180.125:8080/api/v1/sales/getAllVehicleDetails?page=${pageNumber}&userId=${userId}`, {
             credentials: "include"
         })
             .then(response => {

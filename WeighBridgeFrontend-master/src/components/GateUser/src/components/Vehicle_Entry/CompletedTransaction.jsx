@@ -19,7 +19,7 @@ import TicketComponentGU from "./TicketComponentGU";
 
 const { Option } = Select;
 const api = axios.create({
-  baseURL: "http://localhost:8080/api/v1/gate",
+  baseURL: "http://49.249.180.125:8080/api/v1/gate",
   headers: {
     "Content-Type": "application/json",
   },
@@ -115,7 +115,7 @@ const CompletedTransaction = () => {
   useEffect(() => {
     
     fetch(
-      `http://localhost:8080/api/v1/gate/completedDashboard?userId=${userId}`,
+      `http://49.249.180.125:8080/api/v1/gate/completedDashboard?userId=${userId}`,
       {
         credentials: "include",
       }
@@ -151,7 +151,7 @@ const CompletedTransaction = () => {
 
   const fetchData = (pageNumber) => {
     fetch(
-      `http://localhost:8080/api/v1/gate/completedDashboard?page=${pageNumber}&userId=${userId}`,
+      `http://49.249.180.125:8080/api/v1/gate/completedDashboard?page=${pageNumber}&userId=${userId}`,
       {
         credentials: "include",
       }
@@ -175,7 +175,7 @@ const CompletedTransaction = () => {
 
 
   const handlePrint = async (ticketNo) => {
-    const apiUrl = `http://localhost:8080/api/v1/gate/print/${ticketNo}`;
+    const apiUrl = `http://49.249.180.125:8080/api/v1/gate/print/${ticketNo}`;
     try {
       const response = await axios.get(apiUrl, {
         headers: {

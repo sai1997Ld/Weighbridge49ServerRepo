@@ -112,7 +112,7 @@ function QualityCheck() {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/getAllTransaction?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/getAllTransaction?userId=${userId}`,
         {
           credentials: "include",
         }
@@ -150,15 +150,15 @@ function QualityCheck() {
   const fetchPendingCounts = async () => {
     try {
       const totalPendingResponse = await fetch(
-        `http://localhost:8080/api/v1/qualities/total/pending?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/total/pending?userId=${userId}`,
         { credentials: "include" }      
       );
       const inboundPendingResponse = await fetch(
-        `http://localhost:8080/api/v1/qualities/inbound/pending?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/inbound/pending?userId=${userId}`,
         { credentials: "include" }
       );
       const outboundPendingResponse = await fetch(
-        `http://localhost:8080/api/v1/qualities/outbound/pending?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/outbound/pending?userId=${userId}`,
         { credentials: "include" }
       );
 
@@ -190,15 +190,15 @@ function QualityCheck() {
   const fetchCompletedCounts = async () => {
     try {
       const totalCompletedResponse = await fetch(
-        `http://localhost:8080/api/v1/qualities/total-qct-completed-size?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/total-qct-completed-size?userId=${userId}`,
         { credentials: "include" }
       );
       const inboundCompletedResponse = await fetch(
-        `http://localhost:8080/api/v1/qualities/inbound-qct-completed-size?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/inbound-qct-completed-size?userId=${userId}`,
         { credentials: "include" }
       );
       const outboundCompletedResponse = await fetch(
-        `http://localhost:8080/api/v1/qualities/outbound-qct-completed-size?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/outbound-qct-completed-size?userId=${userId}`,
         { credentials: "include" }
       );
 
@@ -270,7 +270,7 @@ function QualityCheck() {
   const fetchMaterialOptions = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/fetch-ProductsOrMaterials?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/fetch-ProductsOrMaterials?userId=${userId}`,
         {
           credentials: "include",
         }
@@ -300,7 +300,7 @@ function QualityCheck() {
   const fetchInboundTransactions = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/fetch-InboundTransaction?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/fetch-InboundTransaction?userId=${userId}`,
         {
           credentials: "include",
         }
@@ -320,7 +320,7 @@ function QualityCheck() {
   const fetchOutboundTransactions = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/fetch-OutboundTransaction?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/fetch-OutboundTransaction?userId=${userId}`,
         {
           credentials: "include",
         }
@@ -420,7 +420,7 @@ function QualityCheck() {
 
   const removeTransaction = async (ticketNumber) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/v1/qualities/${ticketNumber}?userId=${userId}`, {
+      const response = await fetch(`http://49.249.180.125:8080/api/v1/qualities/${ticketNumber}?userId=${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -489,7 +489,7 @@ function QualityCheck() {
     if (searchType === "ticketNo") {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/qualities/searchByTicketNo/${searchQuery}?checkQualityCompleted=false&userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/qualities/searchByTicketNo/${searchQuery}?checkQualityCompleted=false&userId=${userId}`,
           {
             credentials: "include",
           }
@@ -513,7 +513,7 @@ function QualityCheck() {
     } else if (searchType === "vehicleNo") {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/qualities/searchByVehicleNo/${searchQuery}?userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/qualities/searchByVehicleNo/${searchQuery}?userId=${userId}`,
           {
             credentials: "include",
           }
@@ -530,7 +530,7 @@ function QualityCheck() {
     } else if (searchType === "supplier") {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/qualities/searchBySupplierOrCustomer?supplierOrCustomerName=${searchQuery}&userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/qualities/searchBySupplierOrCustomer?supplierOrCustomerName=${searchQuery}&userId=${userId}`,
           {
             credentials: "include",
           }
@@ -547,7 +547,7 @@ function QualityCheck() {
     } else if (searchType === "supplierAddress") {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/qualities/searchBySupplierOrCustomer?supplierOrCustomerAddress=${searchQuery}&userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/qualities/searchBySupplierOrCustomer?supplierOrCustomerAddress=${searchQuery}&userId=${userId}`,
           {
             credentials: "include",
           }

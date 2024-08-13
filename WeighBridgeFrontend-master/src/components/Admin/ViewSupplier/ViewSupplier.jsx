@@ -22,7 +22,7 @@ const ViewSupplier = () => {
 
   const fetchSupplierData = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/v1/supplier");
+      const response = await fetch("http://49.249.180.125:8080/api/v1/supplier");
       const data = await response.json();
       setSuppliers(data);
     } catch (error) {
@@ -37,7 +37,7 @@ const ViewSupplier = () => {
         return;
       }
       const response = await fetch(
-        `http://localhost:8080/api/v1/supplier/get/id/${supplierIdFilter}`
+        `http://49.249.180.125:8080/api/v1/supplier/get/id/${supplierIdFilter}`
       );
       if (!response.ok) {
         const errorResponse = await response.json();
@@ -69,7 +69,7 @@ const ViewSupplier = () => {
       if (result.isConfirmed) {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/v1/supplier/active/${supplierId}`,
+            `http://49.249.180.125:8080/api/v1/supplier/active/${supplierId}`,
             {
               method: "PUT",
             }
@@ -105,7 +105,7 @@ const ViewSupplier = () => {
       if (result.isConfirmed) {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/v1/supplier/delete/${supplierId}`,
+            `http://49.249.180.125:8080/api/v1/supplier/delete/${supplierId}`,
             {
               method: "DELETE",
             }

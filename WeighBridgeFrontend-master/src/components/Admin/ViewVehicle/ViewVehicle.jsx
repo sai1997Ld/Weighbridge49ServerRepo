@@ -28,7 +28,7 @@ const ViewVehicle = () => {
   const fetchVehicles = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/vehicles?page=${
+        `http://49.249.180.125:8080/api/v1/vehicles?page=${
           currentPage - 1
         }&size=${pageSize}`
       );
@@ -48,7 +48,7 @@ const ViewVehicle = () => {
         return;
       }
       const response = await fetch(
-        `http://localhost:8080/api/v1/vehicles/${vehicleNoFilter}`
+        `http://49.249.180.125:8080/api/v1/vehicles/${vehicleNoFilter}`
       );
       if (!response.ok) {
         const errorResponse = await response.json();
@@ -79,7 +79,7 @@ const ViewVehicle = () => {
       if (result.isConfirmed) {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/v1/vehicles/${vehicleId}/activate`,
+            `http://49.249.180.125:8080/api/v1/vehicles/${vehicleId}/activate`,
             {
               method: "PUT",
             }
@@ -115,7 +115,7 @@ const ViewVehicle = () => {
       if (result.isConfirmed) {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/v1/vehicles/${vehicleId}/deactivate`,
+            `http://49.249.180.125:8080/api/v1/vehicles/${vehicleId}/deactivate`,
             {
               method: "DELETE",
             }

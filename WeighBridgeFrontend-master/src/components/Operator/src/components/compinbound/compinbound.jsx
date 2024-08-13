@@ -25,7 +25,7 @@ function InboundComp() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/v1/weighment/get/${ticketNumber}`, {
+      .get(`http://49.249.180.125:8080/api/v1/weighment/get/${ticketNumber}`, {
         withCredentials: true,
       })
       .then((response) => {
@@ -104,7 +104,7 @@ function InboundComp() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:8080/api/v1/camera/get?ticketNo=${ticketNumber}&userId=${userId}&role=${"WEIGHBRIDGE_OPERATOR"}&truckStatus=${ENTRY}`
+        `http://49.249.180.125:8080/api/v1/camera/get?ticketNo=${ticketNumber}&userId=${userId}&role=${"WEIGHBRIDGE_OPERATOR"}&truckStatus=${ENTRY}`
       )
       .then((response) => {
         setGrossWeightImages({
@@ -121,7 +121,7 @@ function InboundComp() {
 
   useEffect(() =>{
     axios
-      .get(`http://localhost:8080/api/v1/camera/get?ticketNo=${ticketNumber}&userId=${userId}&role=${"WEIGHBRIDGE_OPERATOR"}&truckStatus=${EXIT}`)
+      .get(`http://49.249.180.125:8080/api/v1/camera/get?ticketNo=${ticketNumber}&userId=${userId}&role=${"WEIGHBRIDGE_OPERATOR"}&truckStatus=${EXIT}`)
       .then((response)=>{
         setTareWeightImages({
           frontImg1: response.data.frontImg1,

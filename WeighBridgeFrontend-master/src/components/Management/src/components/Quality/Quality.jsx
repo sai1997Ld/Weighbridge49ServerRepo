@@ -70,7 +70,7 @@ function ManagementQuality() {
   const fetchMaterialOptions = async () => {
     try {
       const materialResponse = await fetch(
-        "http://localhost:8080/api/v1/qualities/fetch-ProductsOrMaterials",
+        "http://49.249.180.125:8080/api/v1/qualities/fetch-ProductsOrMaterials",
         {
           credentials: "include",
         }
@@ -100,7 +100,7 @@ function ManagementQuality() {
   const fetchInboundTransactions = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/fetch-InboundTransaction/getquality?companyName=${selectedCompany}&siteName=${selectedSiteName}`,
+        `http://49.249.180.125:8080/api/v1/qualities/fetch-InboundTransaction/getquality?companyName=${selectedCompany}&siteName=${selectedSiteName}`,
         {
           credentials: "include",
         }
@@ -121,7 +121,7 @@ function ManagementQuality() {
   const fetchOutboundTransactions = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/fetch-OutboundTransaction?companyName=${selectedCompany}&siteName=${selectedSiteName}`,
+        `http://49.249.180.125:8080/api/v1/qualities/fetch-OutboundTransaction?companyName=${selectedCompany}&siteName=${selectedSiteName}`,
         {
           credentials: "include",
         }
@@ -206,7 +206,7 @@ function ManagementQuality() {
   const removeTransaction = async (ticketNumber) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/${ticketNumber}`,
+        `http://49.249.180.125:8080/api/v1/qualities/${ticketNumber}`,
         {
           method: "PUT",
           headers: {
@@ -267,7 +267,7 @@ function ManagementQuality() {
         return [];
       }
   
-      const apiUrl = `http://localhost:8080/api/v1/management/goodQualities`;
+      const apiUrl = `http://49.249.180.125:8080/api/v1/management/goodQualities`;
       const date = selectedDate ? selectedDate : moment();
       const formattedDate = date.format("DD-MM-YYYY");
   
@@ -309,7 +309,7 @@ function ManagementQuality() {
         return [];
       }
   
-      const apiUrl = `http://localhost:8080/api/v1/management/badQualities`;
+      const apiUrl = `http://49.249.180.125:8080/api/v1/management/badQualities`;
       const date = selectedDate ? selectedDate : moment();
       const formattedDate = date.format("DD-MM-YYYY");
   
@@ -352,7 +352,7 @@ function ManagementQuality() {
         return;
       }
 
-      let apiUrl = `http://localhost:8080/api/v1/management/completedQualities/GoodOrBad`;
+      let apiUrl = `http://49.249.180.125:8080/api/v1/management/completedQualities/GoodOrBad`;
 
       if (selectedDate) {
         // Format the selected date as "YYYY-MM-DD" for the query parameter

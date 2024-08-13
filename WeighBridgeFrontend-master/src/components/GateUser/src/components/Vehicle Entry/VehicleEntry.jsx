@@ -34,7 +34,7 @@ const VehicleEntry = ({ onConfirmTicket = () => { } }) => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/gate", {
+    fetch("http://49.249.180.125:8080/api/v1/gate", {
       credentials: "include"
     })
       .then(response => {

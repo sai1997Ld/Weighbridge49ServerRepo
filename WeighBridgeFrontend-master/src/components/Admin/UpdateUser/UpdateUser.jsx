@@ -33,7 +33,7 @@ function UpdateUser() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/company/names")
+    fetch("http://49.249.180.125:8080/api/v1/company/names")
       .then((response) => response.json())
       .then((data) => {
         // console.log("Company List:", data);
@@ -47,7 +47,7 @@ function UpdateUser() {
   }, [user.company]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/roles/get/all/role")
+    fetch("http://49.249.180.125:8080/api/v1/roles/get/all/role")
       .then((response) => response.json())
       .then((data) => {
         // console.log("Roles List:", data);
@@ -59,7 +59,7 @@ function UpdateUser() {
   }, []);
 
   const fetchSiteList = (selectedCompany) => {
-    fetch(`http://localhost:8080/api/v1/sites/company/${selectedCompany}`)
+    fetch(`http://49.249.180.125:8080/api/v1/sites/company/${selectedCompany}`)
       .then((response) => response.json())
       .then((data) => {
         // console.log("Site List:", data);
@@ -150,7 +150,7 @@ function UpdateUser() {
     };
 
     fetch(
-      `http://localhost:8080/api/v1/users/updateUser/${userId}?user=${sessionStorage.getItem(
+      `http://49.249.180.125:8080/api/v1/users/updateUser/${userId}?user=${sessionStorage.getItem(
         "userId"
       )}`,
       {

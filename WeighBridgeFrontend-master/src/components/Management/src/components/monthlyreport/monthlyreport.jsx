@@ -44,8 +44,8 @@ const ManagementMonthlyReport = () => {
     }
   
     const apiUrl = selectedSiteName
-      ? `http://localhost:8080/api/v1/weighment/report?startDate=${start}&endDate=${end}&companyName=${selectedCompany}&siteName=${selectedSiteName}`
-      : `http://localhost:8080/api/v1/weighment/report?startDate=${start}&endDate=${end}&companyName=${selectedCompany}`;
+      ? `http://49.249.180.125:8080/api/v1/weighment/report?startDate=${start}&endDate=${end}&companyName=${selectedCompany}&siteName=${selectedSiteName}`
+      : `http://49.249.180.125:8080/api/v1/weighment/report?startDate=${start}&endDate=${end}&companyName=${selectedCompany}`;
   
     axios
       .get(apiUrl, {

@@ -34,7 +34,7 @@ function ProcessOrder() {
   const [selectedFollowOnOrder, setSelectedFollowOnOrder] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/vehicles/vehicleList")
+    fetch("http://49.249.180.125:8080/api/v1/vehicles/vehicleList")
       .then((response) => response.json())
       .then((data) => {
         const numbers = data.map((vehicleNo) => ({
@@ -64,7 +64,7 @@ function ProcessOrder() {
 
   useEffect(() => {
     if (vehicleNo) {
-      fetch(`http://localhost:8080/api/v1/vehicles/${vehicleNo.value}`)
+      fetch(`http://49.249.180.125:8080/api/v1/vehicles/${vehicleNo.value}`)
         .then((response) => response.json())
         .then((data) => {
           setTransporters(data.transporter);
@@ -75,7 +75,7 @@ function ProcessOrder() {
 
   useEffect(() => {
     if (formProductName) {
-      fetch(`http://localhost:8080/api/v1/products/${encodeURIComponent(formProductName)}/types`)
+      fetch(`http://49.249.180.125:8080/api/v1/products/${encodeURIComponent(formProductName)}/types`)
         .then((response) => response.json())
         .then((data) => {
           setProductTypes(data);
@@ -184,7 +184,7 @@ function ProcessOrder() {
       transporterName,
     };
   
-    fetch("http://localhost:8080/api/v1/salesProcess/salesProcess?checkSales=newSaleOrder", {
+    fetch("http://49.249.180.125:8080/api/v1/salesProcess/salesProcess?checkSales=newSaleOrder", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -231,7 +231,7 @@ function ProcessOrder() {
       productType: productType
     });
 
-    fetch(`http://localhost:8080/api/v1/sales/saleOrderList?${queryParams}`)
+    fetch(`http://49.249.180.125:8080/api/v1/sales/saleOrderList?${queryParams}`)
       .then(response => response.json())
       .then(data => {
         setFollowOnOrders(data);
@@ -256,7 +256,7 @@ function ProcessOrder() {
       transporterName,
     };
   
-    let apiUrl = "http://localhost:8080/api/v1/salesProcess/salesProcess";
+    let apiUrl = "http://49.249.180.125:8080/api/v1/salesProcess/salesProcess";
     if (selectedFollowOnOrder) {
       apiUrl += `?saleOrder=${selectedFollowOnOrder}`;
     }

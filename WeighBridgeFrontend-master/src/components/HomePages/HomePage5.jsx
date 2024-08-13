@@ -88,7 +88,7 @@ const [supplierAddress, setSupplierAddress] = useState(sessionStorage.getItem('s
           toDate: endDate,
         };
 
-        const response = await axios.post('http://localhost:8080/api/v1/management/moisture-percentage', payload);
+        const response = await axios.post('http://49.249.180.125:8080/api/v1/management/moisture-percentage', payload);
         const data = response.data.moisturePercentageData;
 
         // Process data for bar chart
@@ -118,7 +118,7 @@ const [supplierAddress, setSupplierAddress] = useState(sessionStorage.getItem('s
   }, [company, site, startDate, endDate, supplierName, supplierAddress]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/company/names")
+    fetch("http://49.249.180.125:8080/api/v1/company/names")
       .then((response) => response.json())
       .then((data) => {
         console.log("Company List:", data);
@@ -132,7 +132,7 @@ const [supplierAddress, setSupplierAddress] = useState(sessionStorage.getItem('s
   useEffect(() => {
     const fetchSites = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/v1/sites/company/${company}`);
+        const response = await fetch(`http://49.249.180.125:8080/api/v1/sites/company/${company}`);
         if (!response.ok) {
           throw new Error("Failed to fetch site list.");
         }
@@ -156,7 +156,7 @@ const [supplierAddress, setSupplierAddress] = useState(sessionStorage.getItem('s
   };
 
   const fetchSupplierNames = () => {
-    fetch("http://localhost:8080/api/v1/supplier/get/list")
+    fetch("http://49.249.180.125:8080/api/v1/supplier/get/list")
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -181,7 +181,7 @@ const [supplierAddress, setSupplierAddress] = useState(sessionStorage.getItem('s
   };
 
   const fetchSupplierAddress = (supplierName) => {
-    fetch(`http://localhost:8080/api/v1/supplier/get/${supplierName}`)
+    fetch(`http://49.249.180.125:8080/api/v1/supplier/get/${supplierName}`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -223,11 +223,11 @@ const [supplierAddress, setSupplierAddress] = useState(sessionStorage.getItem('s
         };
 
         const [lineResponse, inboundResponse, outboundResponse, materialProductResponse, materialProductQualityResponse] = await Promise.all([
-          axios.post('http://localhost:8080/api/v1/management/gate-dash', payload),
-          axios.post('http://localhost:8080/api/v1/management/getQtyByGraph?transactionType=Inbound', payload),
-          axios.post('http://localhost:8080/api/v1/management/getQtyByGraph?transactionType=Outbound', payload),
-          axios.post('http://localhost:8080/api/v1/management/material-product', payload),
-          axios.post('http://localhost:8080/api/v1/management/material-product/qualities', payload),
+          axios.post('http://49.249.180.125:8080/api/v1/management/gate-dash', payload),
+          axios.post('http://49.249.180.125:8080/api/v1/management/getQtyByGraph?transactionType=Inbound', payload),
+          axios.post('http://49.249.180.125:8080/api/v1/management/getQtyByGraph?transactionType=Outbound', payload),
+          axios.post('http://49.249.180.125:8080/api/v1/management/material-product', payload),
+          axios.post('http://49.249.180.125:8080/api/v1/management/material-product/qualities', payload),
         ]);
 
         const lineData = lineResponse.data;

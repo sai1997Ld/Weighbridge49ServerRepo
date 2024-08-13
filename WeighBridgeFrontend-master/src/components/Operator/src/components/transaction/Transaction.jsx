@@ -126,7 +126,7 @@ const OperatorTransaction2 = () => {
   const fetchMaterials = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/v1/materials/names`,
+        `http://49.249.180.125:8080/api/v1/materials/names`,
         {
           withCredentials: true,
         }
@@ -140,7 +140,7 @@ const OperatorTransaction2 = () => {
   const fetchData = (pageNumber) => {
     axios
       .get(
-        `http://localhost:8080/api/v1/weighment/getAll?page=${pageNumber}&userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/weighment/getAll?page=${pageNumber}&userId=${userId}`,
         {
           withCredentials: true,
         }
@@ -151,7 +151,7 @@ const OperatorTransaction2 = () => {
         setPager(response.data.totalElements);
 
         return axios.get(
-          `http://localhost:8080/api/v1/status/PendingTare/Outbound?userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/status/PendingTare/Outbound?userId=${userId}`,
           {
             withCredentials: true,
           }
@@ -162,7 +162,7 @@ const OperatorTransaction2 = () => {
         console.log("Data from the second API:", secondResponse.data);
 
         return axios.get(
-          `http://localhost:8080/api/v1/status/pendingGross/Outbound?userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/status/pendingGross/Outbound?userId=${userId}`,
           {
             withCredentials: true,
           }
@@ -173,7 +173,7 @@ const OperatorTransaction2 = () => {
         console.log("Data from the third API:", thirdResponse.data);
 
         return axios.get(
-          `http://localhost:8080/api/v1/status/pendingTare/Inbound?userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/status/pendingTare/Inbound?userId=${userId}`,
           {
             withCredentials: true,
           }
@@ -184,7 +184,7 @@ const OperatorTransaction2 = () => {
         console.log("Data from the fourth API:", fourthResponse.data);
 
         return axios.get(
-          `http://localhost:8080/api/v1/status/pendingGross/Inbound?userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/status/pendingGross/Inbound?userId=${userId}`,
           {
             withCredentials: true,
           }
@@ -210,7 +210,7 @@ const OperatorTransaction2 = () => {
   }, [userId, pageNumber]);
 
   const api = axios.create({
-    baseURL: "http://localhost:8080/search/v1/Api",
+    baseURL: "http://49.249.180.125:8080/search/v1/Api",
     headers: {
       "Content-Type": "application/json",
     },
@@ -321,7 +321,7 @@ const OperatorTransaction2 = () => {
 
   //print
   const handlePrint = async (ticketNo) => {
-    const apiUrl = `http://localhost:8080/api/v1/weighment/getPrintTicketWise/${ticketNo}`;
+    const apiUrl = `http://49.249.180.125:8080/api/v1/weighment/getPrintTicketWise/${ticketNo}`;
     try {
       const response = await axios.get(apiUrl, {
         headers: {
@@ -367,7 +367,7 @@ const OperatorTransaction2 = () => {
   const handleQualityReportDownload = async (ticketNo) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/report-response/${ticketNo}?userId=${userId}`
+        `http://49.249.180.125:8080/api/v1/qualities/report-response/${ticketNo}?userId=${userId}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");

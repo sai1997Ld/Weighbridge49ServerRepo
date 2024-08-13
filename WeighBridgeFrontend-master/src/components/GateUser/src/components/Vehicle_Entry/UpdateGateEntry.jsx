@@ -59,7 +59,7 @@ function UpdateVehicleEntryDetails() {
     if (e.key === "Enter") {
       e.preventDefault(); // Prevent form submission
       // Call API with the entered vehicle number
-      fetch(`http://localhost:8080/api/v1/vehicles/vehicle/${formData.vehicle}`)
+      fetch(`http://49.249.180.125:8080/api/v1/vehicles/vehicle/${formData.vehicle}`)
         .then((response) => response.json())
         .then((data) => {
 
@@ -198,7 +198,7 @@ function UpdateVehicleEntryDetails() {
     console.log("payload", payload);
 
     // Fetch API
-    fetch(`http://localhost:8080/api/v1/gate/update?userId=${userId}`, {
+    fetch(`http://49.249.180.125:8080/api/v1/gate/update?userId=${userId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

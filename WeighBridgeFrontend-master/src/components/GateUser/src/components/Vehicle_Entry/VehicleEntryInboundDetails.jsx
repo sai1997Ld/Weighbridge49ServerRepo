@@ -93,7 +93,7 @@ const VehicleEntryInboundDetails = () => {
 
   const getVehicles = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/v1/vehicles/vehicleList");
+      const response = await axios.get("http://49.249.180.125:8080/api/v1/vehicles/vehicleList");
       console.log({ response: response.data });
       const numbers = response.data.map((vehicleNo) => ({
         value: vehicleNo,
@@ -141,7 +141,7 @@ const VehicleEntryInboundDetails = () => {
   const handleVehicleNoKeyPress = async (selectedVehicleNo) => {
     try {
       fetch(
-        `http://localhost:8080/api/v1/vehicles/vehicle/${selectedVehicleNo}`
+        `http://49.249.180.125:8080/api/v1/vehicles/vehicle/${selectedVehicleNo}`
       )
         .then((response) => response.json())
         .then((data) => {
@@ -168,7 +168,7 @@ const VehicleEntryInboundDetails = () => {
   const handleSupplierChange = (selectedOption) => {
     setSelectedSupplier(selectedOption);
 
-    fetch(`http://localhost:8080/api/v1/supplier/get/${selectedOption.value}`)
+    fetch(`http://49.249.180.125:8080/api/v1/supplier/get/${selectedOption.value}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -212,7 +212,7 @@ const VehicleEntryInboundDetails = () => {
   const fetchMaterialList = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8080/api/v1/materials/names",
+        "http://49.249.180.125:8080/api/v1/materials/names",
         {
           method: "GET",
           credentials: "include",
@@ -235,7 +235,7 @@ const VehicleEntryInboundDetails = () => {
   };
 
   const getMaterialType = (value) => {
-    fetch(`http://localhost:8080/api/v1/materials/${value}/types`)
+    fetch(`http://49.249.180.125:8080/api/v1/materials/${value}/types`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -340,7 +340,7 @@ const VehicleEntryInboundDetails = () => {
     // return false;
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/v1/gate/saveTransaction?userId=${userId}&role=${"GATE_USER"}`,
+        `http://49.249.180.125:8080/api/v1/gate/saveTransaction?userId=${userId}&role=${"GATE_USER"}`,
         formD,
         {
           headers: {
@@ -407,7 +407,7 @@ const VehicleEntryInboundDetails = () => {
     const fetchSupplierList = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8080/api/v1/supplier/get/list",
+          "http://49.249.180.125:8080/api/v1/supplier/get/list",
           {
             method: "GET",
             credentials: "include",
@@ -928,7 +928,7 @@ const VehicleEntryInboundDetails = () => {
                             <td>
                               <div className="row">
                                 <CameraLiveVideo
-                                  wsUrl={`ws://localhost:8080/ws/frame`}
+                                  wsUrl={`ws://49.249.180.125:8080/ws/frame`}
                                   imageRef={canvasTopRef}
                                   setCapturedImage={setCapturedTopImage}
                                   capturedImage={capturedTopImage}
@@ -938,7 +938,7 @@ const VehicleEntryInboundDetails = () => {
                             <td>
                               <div className="row">
                                 <CameraLiveVideo
-                                  wsUrl={"ws://localhost:8080/ws/frame4"}
+                                  wsUrl={"ws://49.249.180.125:8080/ws/frame4"}
                                   imageRef={canvasRearRef}
                                   setCapturedImage={setCapturedRearImage}
                                   capturedImage={capturedRearImage}
@@ -951,7 +951,7 @@ const VehicleEntryInboundDetails = () => {
                             <td>
                               <div className="row">
                                 <CameraLiveVideo
-                                  wsUrl={"ws://localhost:8080/ws/frame11"}
+                                  wsUrl={"ws://49.249.180.125:8080/ws/frame11"}
                                   imageRef={canvasFrontRef}
                                   setCapturedImage={setCapturedFrontImage}
                                   capturedImage={capturedFrontImage}
@@ -961,7 +961,7 @@ const VehicleEntryInboundDetails = () => {
                             <td>
                               <div className="row">
                                 <CameraLiveVideo
-                                  wsUrl={"ws://localhost:8080/ws/frame12"}
+                                  wsUrl={"ws://49.249.180.125:8080/ws/frame12"}
                                   imageRef={canvasSideRef}
                                   setCapturedImage={setCapturedSideImage}
                                   capturedImage={capturedSideImage}

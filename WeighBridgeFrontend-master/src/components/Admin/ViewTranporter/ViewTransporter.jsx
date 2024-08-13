@@ -22,7 +22,7 @@ const ViewTransporter = () => {
   const fetchTransporterData = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8080/api/v1/transporter/details"
+        "http://49.249.180.125:8080/api/v1/transporter/details"
       );
       const data = await response.json();
       setTransporters(data);
@@ -38,7 +38,7 @@ const ViewTransporter = () => {
         return;
       }
       const response = await fetch(
-        `http://localhost:8080/api/v1/transporter/${transporterIdFilter}`
+        `http://49.249.180.125:8080/api/v1/transporter/${transporterIdFilter}`
       );
       if (!response.ok) {
         const errorResponse = await response.json();
@@ -70,7 +70,7 @@ const ViewTransporter = () => {
       if (result.isConfirmed) {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/v1/transporter/${transporterId}/activate`,
+            `http://49.249.180.125:8080/api/v1/transporter/${transporterId}/activate`,
             {
               method: "PUT",
             }
@@ -110,7 +110,7 @@ const ViewTransporter = () => {
       if (result.isConfirmed) {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/v1/transporter/${transporterId}/deactivate`,
+            `http://49.249.180.125:8080/api/v1/transporter/${transporterId}/deactivate`,
             {
               method: "DELETE",
             }

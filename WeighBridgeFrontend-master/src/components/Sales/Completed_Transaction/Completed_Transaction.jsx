@@ -68,7 +68,7 @@ const Completed_Transaction = () => {
 
   const fetchMaterials = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/v1/materials`, {
+      const response = await axios.get(`http://49.249.180.125:8080/api/v1/materials`, {
         withCredentials: true,
       });
       const materials = response.data.map((material) => material.materialName);
@@ -81,7 +81,7 @@ const Completed_Transaction = () => {
   const fetchData = (pageNumber) => {
     axios
       .get(
-        `http://localhost:8080/api/v1/weighment/getCompletedTransaction?page=${pageNumber}&userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/weighment/getCompletedTransaction?page=${pageNumber}&userId=${userId}`,
         {
           withCredentials: true,
         }
@@ -112,7 +112,7 @@ const Completed_Transaction = () => {
   }, [userId, pageNumber]);
 
   const api = axios.create({
-    baseURL: "http://localhost:8080/search/v1/Api",
+    baseURL: "http://49.249.180.125:8080/search/v1/Api",
     headers: {
       "Content-Type": "application/json",
     },

@@ -21,7 +21,7 @@ function SiteManagement() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/company")
+    fetch("http://49.249.180.125:8080/api/v1/company")
       .then((response) => response.json())
       .then((data) => setCompanies(data))
       .catch((error) => console.error("Error fetching companies:", error));
@@ -50,7 +50,7 @@ function SiteManagement() {
       siteAddress,
     };
 
-    fetch(`http://localhost:8080/api/v1/sites?userId=${userId}`, {
+    fetch(`http://49.249.180.125:8080/api/v1/sites?userId=${userId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

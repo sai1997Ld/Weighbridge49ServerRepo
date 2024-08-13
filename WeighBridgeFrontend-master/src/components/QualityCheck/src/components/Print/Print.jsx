@@ -13,7 +13,7 @@ const QPrint = () => {
   const handleSearch = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/report-response/${ticketNo}?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/report-response/${ticketNo}?userId=${userId}`,
         {
           credentials: "include",
         }
