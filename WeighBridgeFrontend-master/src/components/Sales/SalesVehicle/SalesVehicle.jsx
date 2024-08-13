@@ -36,7 +36,7 @@ function SalesVehicle() {
     }
 
     // Fetch transporters
-    fetch("http://localhost:8080/api/v1/transporter")
+    fetch("http://49.249.180.125:8080/api/v1/transporter")
       .then((response) => response.json())
       .then((data) => setTransporters(data))
       .catch((error) => console.error("Error fetching transporters:", error));
@@ -104,7 +104,7 @@ function SalesVehicle() {
       vehicleLoadCapacity: loadCapacityUnit === "kg" ? vehicleLoadCapacity : vehicleLoadCapacity * 1000,
     };
 
-    fetch(`http://localhost:8080/api/v1/vehicles/${transporter}?userId=${sessionStorage.getItem("userId")}`, {
+    fetch(`http://49.249.180.125:8080/api/v1/vehicles/${transporter}?userId=${sessionStorage.getItem("userId")}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

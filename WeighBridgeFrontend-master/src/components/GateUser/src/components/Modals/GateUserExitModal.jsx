@@ -526,7 +526,7 @@ const GateUserExitModal = ({ modalOpen, toggleModal, ticketNo }) => {
                               <td>
                                 <div className="row">
                                   <CameraLiveVideo
-                                    wsUrl={"ws://localhost:8080/ws/frame3"}
+                                    wsUrl={"ws://49.249.180.125:8080/ws/frame3"}
                                     imageRef={canvasTopRef}
                                     setCapturedImage={setCapturedTopImage}
                                     capturedImage={capturedTopImage}
@@ -536,7 +536,7 @@ const GateUserExitModal = ({ modalOpen, toggleModal, ticketNo }) => {
                               <td>
                                 <div className="row">
                                   <CameraLiveVideo
-                                    wsUrl={"ws://localhost:8080/ws/frame4"}
+                                    wsUrl={"ws://49.249.180.125:8080/ws/frame4"}
                                     imageRef={canvasRearRef}
                                     setCapturedImage={setCapturedRearImage}
                                     capturedImage={capturedRearImage}
@@ -549,7 +549,7 @@ const GateUserExitModal = ({ modalOpen, toggleModal, ticketNo }) => {
                               <td>
                                 <div className="row">
                                   <CameraLiveVideo
-                                    wsUrl={"ws://localhost:8080/ws/frame11"}
+                                    wsUrl={"ws://49.249.180.125:8080/ws/frame11"}
                                     imageRef={canvasFrontRef}
                                     setCapturedImage={setCapturedFrontImage}
                                     capturedImage={capturedFrontImage}
@@ -559,7 +559,7 @@ const GateUserExitModal = ({ modalOpen, toggleModal, ticketNo }) => {
                               <td>
                                 <div className="row">
                                   <CameraLiveVideo
-                                    wsUrl={"ws://localhost:8080/ws/frame12"}
+                                    wsUrl={"ws://49.249.180.125:8080/ws/frame12"}
                                     imageRef={canvasSideRef}
                                     setCapturedImage={setCapturedSideImage}
                                     capturedImage={capturedSideImage}

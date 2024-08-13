@@ -123,7 +123,7 @@ const Ongoing_Transaction = () => {
   const fetchMaterials = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/v1/materials`,
+        `http://49.249.180.125:8080/api/v1/materials`,
         {
           withCredentials: true,
         }
@@ -138,7 +138,7 @@ const Ongoing_Transaction = () => {
   const fetchData = (pageNumber) => {
     axios
       .get(
-        `http://localhost:8080/api/v1/weighment/getAll?page=${pageNumber}&userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/weighment/getAll?page=${pageNumber}&userId=${userId}`,
         {
           withCredentials: true,
         }
@@ -149,7 +149,7 @@ const Ongoing_Transaction = () => {
         setPager(response.data.totalElements);
 
         return axios.get(
-          `http://localhost:8080/api/v1/status/PendingTare/Outbound?userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/status/PendingTare/Outbound?userId=${userId}`,
           {
             withCredentials: true,
           }
@@ -160,7 +160,7 @@ const Ongoing_Transaction = () => {
         console.log("Data from the second API:", secondResponse.data);
 
         return axios.get(
-          `http://localhost:8080/api/v1/status/pendingGross/Outbound?userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/status/pendingGross/Outbound?userId=${userId}`,
           {
             withCredentials: true,
           }
@@ -171,7 +171,7 @@ const Ongoing_Transaction = () => {
         console.log("Data from the third API:", thirdResponse.data);
 
         return axios.get(
-          `http://localhost:8080/api/v1/status/pendingTare/Inbound?userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/status/pendingTare/Inbound?userId=${userId}`,
           {
             withCredentials: true,
           }
@@ -182,7 +182,7 @@ const Ongoing_Transaction = () => {
         console.log("Data from the fourth API:", fourthResponse.data);
 
         return axios.get(
-          `http://localhost:8080/api/v1/status/pendingGross/Inbound?userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/status/pendingGross/Inbound?userId=${userId}`,
           {
             withCredentials: true,
           }
@@ -208,7 +208,7 @@ const Ongoing_Transaction = () => {
   }, [userId, pageNumber]);
 
   const api = axios.create({
-    baseURL: "http://localhost:8080/search/v1/Api",
+    baseURL: "http://49.249.180.125:8080/search/v1/Api",
     headers: {
       "Content-Type": "application/json",
     },

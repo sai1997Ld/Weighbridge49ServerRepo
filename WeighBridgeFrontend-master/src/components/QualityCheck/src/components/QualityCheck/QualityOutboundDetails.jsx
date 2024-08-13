@@ -112,11 +112,11 @@ const QualityOutboundDetails = () => {
         let response;
         if (urlData.transactionType === "Inbound") {
           response = await fetch(
-            `http://localhost:8080/api/v1/materials/parameters?materialName=${urlData.materialName}&supplierName=${urlData.supplierOrCustomerName}&supplierAddress=${urlData.supplierOrCustomerAddress}&userId=${userId}`
+            `http://49.249.180.125:8080/api/v1/materials/parameters?materialName=${urlData.materialName}&supplierName=${urlData.supplierOrCustomerName}&supplierAddress=${urlData.supplierOrCustomerAddress}&userId=${userId}`
           );
         } else {
           response = await fetch(
-            `http://localhost:8080/api/v1/products/parameters?productName=${urlData.materialName}&userId=${userId}`
+            `http://49.249.180.125:8080/api/v1/products/parameters?productName=${urlData.materialName}&userId=${userId}`
           );
         }
         const data = await response.json();
@@ -175,7 +175,7 @@ const QualityOutboundDetails = () => {
   
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/${formData.ticketNo}?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/${formData.ticketNo}?userId=${userId}`,
         {
           method: "POST",
           headers: {

@@ -150,7 +150,7 @@ function Updatesupplier() {
     };
 
     fetch(
-      `http://localhost:8080/api/v1/supplier/update/${supplierId}?userId=${sessionStorage.getItem(
+      `http://49.249.180.125:8080/api/v1/supplier/update/${supplierId}?userId=${sessionStorage.getItem(
         "userId"
       )}`,
       {

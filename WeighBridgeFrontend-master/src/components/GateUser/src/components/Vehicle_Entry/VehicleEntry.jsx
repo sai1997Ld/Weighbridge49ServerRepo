@@ -35,7 +35,7 @@ const GateUserExitModal = lazy(() => import("../Modals/GateUserExitModal"));
 
 const { Option } = Select;
 const api = axios.create({
-  baseURL: "http://localhost:8080/api/v1/gate",
+  baseURL: "http://49.249.180.125:8080/api/v1/gate",
 
   headers: {
     "Content-Type": "application/json",
@@ -147,7 +147,7 @@ const VehicleEntry = () => {
   const fetchMaterialOptions = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/gate/fetch-ProductsOrMaterials?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/gate/fetch-ProductsOrMaterials?userId=${userId}`,
         {
           credentials: "include", // Include credentials option here
         }
@@ -262,7 +262,7 @@ const VehicleEntry = () => {
     console.log({ pageNumber });
     if (pageNumber !== undefined || pageNumber !== null) {
       fetch(
-        `http://localhost:8080/api/v1/gate?page=${pageNumber}&userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/gate?page=${pageNumber}&userId=${userId}`,
         {
           credentials: "include",
         }
@@ -280,7 +280,7 @@ const VehicleEntry = () => {
           console.log("total Page " + data.totalPages);
           //API for InboundPending Status
           return axios.get(
-            `http://localhost:8080/api/v1/gate/count/Inbound?userId=${userId}`,
+            `http://49.249.180.125:8080/api/v1/gate/count/Inbound?userId=${userId}`,
             {
               withCredentials: true,
             }
@@ -291,7 +291,7 @@ const VehicleEntry = () => {
           console.log("Data from the second API:", secondResponse.data);
           //API for OutboundPending Status
           return axios.get(
-            `http://localhost:8080/api/v1/gate/count/Outbound?userId=${userId}`,
+            `http://49.249.180.125:8080/api/v1/gate/count/Outbound?userId=${userId}`,
             {
               withCredentials: true,
             }
@@ -302,7 +302,7 @@ const VehicleEntry = () => {
           console.log("Data from the third API:", thirdResponse.data);
           //API for Completed Status
           return axios.get(
-            `http://localhost:8080/api/v1/gate/count/Complete?userId=${userId}`,
+            `http://49.249.180.125:8080/api/v1/gate/count/Complete?userId=${userId}`,
             {
               withCredentials: true,
             }
@@ -324,7 +324,7 @@ const VehicleEntry = () => {
     const role = JSON.parse(await sessionStorage.getItem("roles"))[0];
     axios
       .get(
-        `http://localhost:8080/api/v1/gate/edit/${ticketNo}?userId=${userId}&role=${role}`,
+        `http://49.249.180.125:8080/api/v1/gate/edit/${ticketNo}?userId=${userId}&role=${role}`,
         {
           withCredentials: true, // Include credentials with the request
         }
@@ -347,7 +347,7 @@ const VehicleEntry = () => {
   // const handleQualityReportDownload = async (ticketNo) => {
   //   try {
   //     const response = await fetch(
-  //       `http://localhost:8080/api/v1/qualities/report-response/${ticketNo}?userId=${userId}`
+  //       `http://49.249.180.125:8080/api/v1/qualities/report-response/${ticketNo}?userId=${userId}`
   //     );
   //     if (!response.ok) {
   //       throw new Error("Network response was not ok");
@@ -429,7 +429,7 @@ const VehicleEntry = () => {
   // };
 
   const handlePrint = async (ticketNo) => {
-    const apiUrl = `http://localhost:8080/api/v1/gate/print/${ticketNo}`;
+    const apiUrl = `http://49.249.180.125:8080/api/v1/gate/print/${ticketNo}`;
     try {
       const response = await axios.get(apiUrl, {
         headers: {

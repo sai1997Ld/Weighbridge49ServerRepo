@@ -16,7 +16,7 @@ const SalesDisplay = () => {
     const saleOrderNo = new URLSearchParams(location.search).get("saleOrderNo");
     if (saleOrderNo) {
       fetch(
-        `http://localhost:8080/api/v1/salesProcess/bySaleOrderNo/View?saleOrderNo=${saleOrderNo}`
+        `http://49.249.180.125:8080/api/v1/salesProcess/bySaleOrderNo/View?saleOrderNo=${saleOrderNo}`
       )
         .then((response) => response.json())
         .then((data) => setSalesProcessData(data))

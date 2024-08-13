@@ -37,7 +37,7 @@ function TransactionFrom2() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/v1/weighment/get/${ticketNumber}`, {
+      .get(`http://49.249.180.125:8080/api/v1/weighment/get/${ticketNumber}`, {
         withCredentials: true,
       })
       .then((response) => {
@@ -60,7 +60,14 @@ function TransactionFrom2() {
 
   const handleChange1 = (value) => {
     const newValue = parseFloat(value);
-    if (newValue === "-" || parseFloat(newValue) < 0) {
+  
+    if (value === "00") {
+      // If the value is "00", skip validation and set the input value directly
+      setInputValue(value);
+      return;
+    }
+  
+    if (newValue === "-" || isNaN(newValue) || newValue <= 0) {
       Swal.fire({
         title: "Please enter a valid positive number",
         icon: "warning",
@@ -72,8 +79,6 @@ function TransactionFrom2() {
       setInputValue("");
       return;
     } else {
-      // setInputValue(newValue);
-
       if (ticket.tareWeight === 0) {
         setTareWeight(newValue);
       } else {
@@ -81,6 +86,7 @@ function TransactionFrom2() {
       }
     }
   };
+  
 
   const handleSave = async () => {
     try {
@@ -116,7 +122,7 @@ function TransactionFrom2() {
       formD.append("weighmentRequest", JSON.stringify(payload));
       const response = await axios({
         method: "post",
-        url: `http://localhost:8080/api/v1/weighment/measure?userId=${userId}&role=${"WEIGHBRIDGE_OPERATOR"}`,
+        url: `http://49.249.180.125:8080/api/v1/weighment/measure?userId=${userId}&role=${"WEIGHBRIDGE_OPERATOR"}`,
         data: formD,
         headers: {
           withCredentials: true,
@@ -226,7 +232,7 @@ function TransactionFrom2() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:8080/api/v1/camera/get?ticketNo=${ticketNumber}&userId=${userId}&role=${"WEIGHBRIDGE_OPERATOR"}&truckStatus=${ENTRY}`
+        `http://49.249.180.125:8080/api/v1/camera/get?ticketNo=${ticketNumber}&userId=${userId}&role=${"WEIGHBRIDGE_OPERATOR"}&truckStatus=${ENTRY}`
       )
       .then((response) => {
         setTareWeightImages({
@@ -243,58 +249,38 @@ function TransactionFrom2() {
 
   const [weight, setWeight] = useState("Connecting...");
   const [trimmedWeight, setTrimmedWeight] = useState("");
-  const [socket, setSocket] = useState(null);
+  const [intervalId, setIntervalId] = useState(null);
 
   useEffect(() => {
-    const createWebSocket = () => {
-      const ws = new WebSocket("ws://localhost:8080/ws/weight");
 
-      ws.onopen = () => {
-        console.log("Connected to WebSocket server");
-        setWeight("Waiting for data...");
-      };
+    const fetchWeightData = async () => {
+      try {
+        const response = await axios.get(
+          `http://49.249.180.125:8080/api/weight/latest-weight?userId=${userId}`
+        );
 
-      ws.onmessage = (event) => {
-        const receivedData = event.data.trim();
-        console.log("Received data:", receivedData);
+        const receivedData = response.data.trim();
         setWeight(receivedData);
 
-        // Extract and trim the weight
         const match = receivedData.match(/(\d+(\.\d+)?)/);
         if (match) {
           handleChange1(match[0]);
-          // setTrimmedWeight(match[0]);
-          setInputValue(match[0]); // Update the input value
+          setInputValue(match[0]);
         }
-      };
-
-      ws.onerror = (error) => {
-        console.error("WebSocket error:", error);
+      } catch (error) {
         setWeight("Error receiving data");
-      };
-
-      ws.onclose = (event) => {
-        console.log("WebSocket connection closed", event);
-        if (event.wasClean) {
-          setWeight("Connection closed");
-        } else {
-          setWeight("Connection lost, attempting to reconnect...");
-          setTimeout(createWebSocket, 5000); // Attempt to reconnect after 5 seconds
-        }
-      };
-
-      setSocket(ws);
-    };
-
-    createWebSocket();
-
-    // Cleanup on component unmount
-    return () => {
-      if (socket) {
-        socket.close();
+        console.error("Error fetching weight data:", error);
       }
     };
-  }, [ticket]);
+
+    fetchWeightData();
+    const newIntervalId = setInterval(fetchWeightData, 5000);
+    setIntervalId(newIntervalId);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [ticket,userId]);
 
   // useEffect(() => {
   //    const match = true;
@@ -303,6 +289,49 @@ function TransactionFrom2() {
   //      handleChange1(90);
   //    }
   //  },[ticket])
+  // const [company, setCompany] = useState("VK01");
+  // const [site, setSite] = useState("ROU01");
+
+  const [images, setImages] = useState({
+    weigh1: null,
+    weigh2: null,
+    weigh3: null,
+    frame5: null,
+  });
+
+  // Fetches the latest image for a given camera
+  const fetchImage = async (camera) => {
+    try {
+      const response = await axios.get(
+        `http://49.249.180.125:8080/api/v1/camera/latest-images?userId=${userId}&location=${camera}`
+      );
+
+      const data = response.data;
+      console.log(`Fetched ${camera}:`, data);
+
+      if (data && data.image) {
+        setImages((prevImages) => ({
+          ...prevImages,
+          [camera]: data.image,
+        }));
+      }
+    } catch (error) {
+      console.error(`Error fetching ${camera}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    // Fetch all images initially
+    ["weigh3", "weigh1", "weigh2"].forEach(fetchImage);
+
+    // Set up an interval to fetch images periodically
+    const intervalId = setInterval(() => {
+      ["weigh3", "weigh1", "weigh2"].forEach(fetchImage);
+    }, 5000); // Fetch images every 5 seconds
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, [userId]); // Depend on company and site state
 
   return (
     <SideBar5>
@@ -311,7 +340,7 @@ function TransactionFrom2() {
           <button className="close-button" onClick={goBack}>
             <FontAwesomeIcon icon={faRectangleXmark} />
           </button>
-          <h2 className="text-center mb-3 mt-1">Outbound Transaction Form</h2>
+          <h2 className="text-center mb-3 mt-3">Outbound Transaction Form</h2>
           <div className="row">
             <div className="col-md-3 mb-3">
               <input
@@ -569,42 +598,14 @@ function TransactionFrom2() {
           <div className="row mb-2 p-2 border shadow-lg rounded-lg">
             <div className="col-md-12">
               <div className="row">
-                <div className="col-md-3">
-                  <LiveVideo
-                    wsUrl={"ws://localhost:8080/ws/frame1"}
-                    imageRef={canvasTopRef}
-                    setCapturedImage={setCapturedTopImage}
-                    capturedImage={capturedTopImage}
-                    label="Top View"
-                  />
-                </div>
-                <div className="col-md-3">
-                  <LiveVideo
-                    wsUrl={"ws://localhost:8080/ws/frame2"}
-                    imageRef={canvasRearRef}
-                    setCapturedImage={setCapturedRearImage}
-                    capturedImage={capturedRearImage}
-                    label="Rear View"
-                  />
-                </div>
-                <div className="col-md-3">
-                  <LiveVideo
-                    wsUrl={"ws://localhost:8080/ws/frame14"}
-                    imageRef={canvasFrontRef}
-                    setCapturedImage={setCapturedFrontImage}
-                    capturedImage={capturedFrontImage}
-                    label="Front View"
-                  />
-                </div>
-                <div className="col-md-3">
-                  <LiveVideo
-                    wsUrl={"ws://localhost:8080/ws/frame5"}
-                    imageRef={canvasSideRef}
-                    setCapturedImage={setCapturedSideImage}
-                    capturedImage={capturedSideImage}
-                    label="Side View"
-                  />
-                </div>
+                {Object.entries(images).map(([camera, image]) => (
+                  <div className="col-md-3" key={camera}>
+                    <LiveVideo
+                      image={image}
+                      label={camera.replace("frame", "View")}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -612,42 +613,18 @@ function TransactionFrom2() {
             <div className="col-md-12">
               <div className="row">
                 <h5>Tare Weight Images</h5>
-                <div className="col-md-3">
-                  {tareWeightImages.frontImg1 && (
-                    <img
-                      src={`data:image/jpeg;base64,${tareWeightImages.frontImg1}`}
-                      alt="Front View"
-                      className="img-fluid"
-                    />
-                  )}
-                </div>
-                <div className="col-md-3">
-                  {tareWeightImages.backImg2 && (
-                    <img
-                      src={`data:image/jpeg;base64,${tareWeightImages.backImg2}`}
-                      alt="Rear View"
-                      className="img-fluid"
-                    />
-                  )}
-                </div>
-                <div className="col-md-3">
-                  {tareWeightImages.leftImg5 && (
-                    <img
-                      src={`data:image/jpeg;base64,${tareWeightImages.leftImg5}`}
-                      alt="Top View"
-                      className="img-fluid"
-                    />
-                  )}
-                </div>
-                <div className="col-md-3">
-                  {tareWeightImages.topImg3 && (
-                    <img
-                      src={`data:image/jpeg;base64,${tareWeightImages.topImg3}`}
-                      alt="Side View"
-                      className="img-fluid"
-                    />
-                  )}
-                </div>
+                {/* Iterate over the grossWeightImages object keys and display them */}
+                {Object.entries(tareWeightImages).map(([key, image]) => (
+                  <div className="col-md-3" key={key}>
+                    {image && (
+                      <img
+                        src={`data:image/jpeg;base64,${image}`}
+                        alt={`${key} View`}
+                        className="img-fluid"
+                      />
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

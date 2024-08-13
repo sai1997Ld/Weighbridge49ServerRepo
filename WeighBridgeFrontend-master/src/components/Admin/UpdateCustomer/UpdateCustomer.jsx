@@ -149,7 +149,7 @@ function UpdateCustomer() {
     };
 
     fetch(
-      `http://localhost:8080/api/v1/customers/update/${customerId}?userId=${sessionStorage.getItem(
+      `http://49.249.180.125:8080/api/v1/customers/update/${customerId}?userId=${sessionStorage.getItem(
         "userId"
       )}`,
       {

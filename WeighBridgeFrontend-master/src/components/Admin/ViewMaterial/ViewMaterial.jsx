@@ -13,7 +13,7 @@ const ViewMaterial = () => {
   const [selectedMaterial, setSelectedMaterial] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/materials")
+    fetch("http://49.249.180.125:8080/api/v1/materials")
       .then((response) => response.json())
       .then((data) => setMaterials(data))
       .catch((error) => console.error("Error fetching materials:", error));
@@ -21,7 +21,7 @@ const ViewMaterial = () => {
 
   const handleViewClick = (materialName) => {
     fetch(
-      `http://localhost:8080/api/v1/materials/view/${materialName}/parameters`
+      `http://49.249.180.125:8080/api/v1/materials/view/${materialName}/parameters`
     )
       .then((response) => response.json())
       .then((data) => {

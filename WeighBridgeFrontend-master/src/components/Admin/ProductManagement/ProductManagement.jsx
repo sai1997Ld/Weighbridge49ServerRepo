@@ -29,7 +29,7 @@ function ProductManagement() {
   const userId = sessionStorage.getItem("userId");
 
   const fetchproductNames = () => {
-    fetch("http://localhost:8080/api/v1/products/names")
+    fetch("http://49.249.180.125:8080/api/v1/products/names")
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -55,7 +55,7 @@ function ProductManagement() {
   };
 
   const fetchproductTypeNames = (name) => {
-    fetch(`http://localhost:8080/api/v1/products/${name}/types`)
+    fetch(`http://49.249.180.125:8080/api/v1/products/${name}/types`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -134,7 +134,7 @@ function ProductManagement() {
       productTypeName: finalproductTypeName,
     };
 
-    fetch(`http://localhost:8080/api/v1/products/withType?userId=${userId}`, {
+    fetch(`http://49.249.180.125:8080/api/v1/products/withType?userId=${userId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -203,7 +203,7 @@ function ProductManagement() {
       })),
     };
 
-    fetch("http://localhost:8080/api/v1/products", {
+    fetch("http://49.249.180.125:8080/api/v1/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
