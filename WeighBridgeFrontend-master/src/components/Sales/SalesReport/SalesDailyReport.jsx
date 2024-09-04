@@ -37,7 +37,7 @@ const SalesDailyReport = () => {
   const fetchData = (startDate) => {
     axios
       .get(
-        `http://localhost:8080/api/v1/weighment/report?startDate=${startDate}&userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/weighment/report?startDate=${startDate}&userId=${userId}`,
         {
           withCredentials: true,
         }

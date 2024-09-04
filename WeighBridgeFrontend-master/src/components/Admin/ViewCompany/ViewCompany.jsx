@@ -10,7 +10,7 @@ const ViewCompany = () => {
   const [companies, setCompanies] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/company")
+    fetch("http://49.249.180.125:8080/api/v1/company")
       .then((response) => response.json())
       .then((data) => setCompanies(data))
       .catch((error) => console.error("Error fetching companies:", error));

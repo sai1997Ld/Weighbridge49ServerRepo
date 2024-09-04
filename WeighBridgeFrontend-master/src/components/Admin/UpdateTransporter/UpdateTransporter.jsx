@@ -87,7 +87,7 @@ function UpdateTransporter() {
     };
 
     fetch(
-      `http://localhost:8080/api/v1/transporter/${transporter.id
+      `http://49.249.180.125:8080/api/v1/transporter/${transporter.id
       }?userId=${sessionStorage.getItem("userId")}`,
       {
         method: "PUT",

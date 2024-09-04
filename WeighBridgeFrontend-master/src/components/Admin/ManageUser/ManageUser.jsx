@@ -44,7 +44,7 @@ function ManageUser() {
       if (result.isConfirmed) {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/v1/users/${userId}/deactivate?user=${sessionStorage.getItem(
+            `http://49.249.180.125:8080/api/v1/users/${userId}/deactivate?user=${sessionStorage.getItem(
               "userId"
             )}`,
             {
@@ -82,7 +82,7 @@ function ManageUser() {
       if (result.isConfirmed) {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/v1/users/${userId}/activate?user=${sessionStorage.getItem(
+            `http://49.249.180.125:8080/api/v1/users/${userId}/activate?user=${sessionStorage.getItem(
               "userId"
             )}`,
             {
@@ -109,11 +109,11 @@ function ManageUser() {
 
   const fetchUserData = async () => {
     try {
-      let url = `http://localhost:8080/api/v1/users?page=${
+      let url = `http://49.249.180.125:8080/api/v1/users?page=${
         currentPage - 1
       }&size=${pageSize}`;
       if (status) {
-        url = `http://localhost:8080/api/v1/users/userStatus?userStatus=${status}`;
+        url = `http://49.249.180.125:8080/api/v1/users/userStatus?userStatus=${status}`;
       }
 
       const response = await fetch(url);
@@ -142,7 +142,7 @@ function ManageUser() {
         return;
       }
       const response = await fetch(
-        `http://localhost:8080/api/v1/users/${userIdFilter}`
+        `http://49.249.180.125:8080/api/v1/users/${userIdFilter}`
       );
       if (!response.ok) {
         const errorResponse = await response.json();

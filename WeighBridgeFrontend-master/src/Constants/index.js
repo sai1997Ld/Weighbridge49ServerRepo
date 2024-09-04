@@ -1,1 +1,1 @@
-export const defaultApiUrl = "http://localhost:8080/api/v1";
+export const defaultApiUrl = "http://49.249.180.125:8080/api/v1";

@@ -34,7 +34,7 @@ function VehicleOutboundDetails() {
     const fetchCustomerList = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/Customer/get/list`,
+          `http://49.249.180.125:8080/api/v1/Customer/get/list`,
           {
             method: "GET",
             credentials: "include",
@@ -61,7 +61,7 @@ function VehicleOutboundDetails() {
     const fetchProductList = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/Products/names`,
+          `http://49.249.180.125:8080/api/v1/Products/names`,
           {
             method: "GET",
             credentials: "include",
@@ -176,7 +176,7 @@ function VehicleOutboundDetails() {
     console.log("FormData:", formD);
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/v1/gate/saveTransaction?userId=${userId}&role=${"GATE_USER"}`,
+        `http://49.249.180.125:8080/api/v1/gate/saveTransaction?userId=${userId}&role=${"GATE_USER"}`,
         formD,
         {
           headers: {
@@ -215,7 +215,7 @@ function VehicleOutboundDetails() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:8080/api/v1/sales/getBySalePassNo?salePassNo=${sale}&userId=${userId} `,
+        `http://49.249.180.125:8080/api/v1/sales/getBySalePassNo?salePassNo=${sale}&userId=${userId} `,
         {
           withCredentials: true,
         }
@@ -581,7 +581,7 @@ function VehicleOutboundDetails() {
                                       <div className="col-md-3">
                                         <CameraLiveVideo
                                           wsUrl={
-                                            "ws://localhost:8080/ws/frame3"
+                                            "ws://49.249.180.125:8080/ws/frame3"
                                           }
                                           imageRef={canvasTopRef}
                                           setCapturedImage={setCapturedTopImage}
@@ -595,7 +595,7 @@ function VehicleOutboundDetails() {
                                       <div className="col-md-3">
                                         <CameraLiveVideo
                                           wsUrl={
-                                            "ws://localhost:8080/ws/frame4"
+                                            "ws://49.249.180.125:8080/ws/frame4"
                                           }
                                           imageRef={canvasRearRef}
                                           setCapturedImage={
@@ -614,7 +614,7 @@ function VehicleOutboundDetails() {
                                       <div className="col-md-3">
                                         <CameraLiveVideo
                                           wsUrl={
-                                            "ws://localhost:8080/ws/frame51"
+                                            "ws://49.249.180.125:8080/ws/frame51"
                                           }
                                           imageRef={canvasFrontRef}
                                           setCapturedImage={
@@ -630,7 +630,7 @@ function VehicleOutboundDetails() {
                                       <div className="col-md-3">
                                         <CameraLiveVideo
                                           wsUrl={
-                                            "ws://localhost:8080/ws/frame51"
+                                            "ws://49.249.180.125:8080/ws/frame51"
                                           }
                                           imageRef={canvasSideRef}
                                           setCapturedImage={

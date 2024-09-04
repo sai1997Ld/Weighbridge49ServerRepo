@@ -48,14 +48,14 @@ function HomePage1() {
           customersResponse,
           registeredTrucksResponse,
         ] = await Promise.all([
-          axios.get("http://localhost:8080/api/v1/home/all-users"),
-          axios.get("http://localhost:8080/api/v1/home/active-users"),
-          axios.get("http://localhost:8080/api/v1/home/inactive-users"),
-          axios.get("http://localhost:8080/api/v1/home/transporters"),
-          axios.get("http://localhost:8080/api/v1/home/companies"),
-          axios.get("http://localhost:8080/api/v1/home/suppliers"),
-          axios.get("http://localhost:8080/api/v1/home/customers"),
-          axios.get("http://localhost:8080/api/v1/home/vehicles"),
+          axios.get("http://49.249.180.125:8080/api/v1/home/all-users"),
+          axios.get("http://49.249.180.125:8080/api/v1/home/active-users"),
+          axios.get("http://49.249.180.125:8080/api/v1/home/inactive-users"),
+          axios.get("http://49.249.180.125:8080/api/v1/home/transporters"),
+          axios.get("http://49.249.180.125:8080/api/v1/home/companies"),
+          axios.get("http://49.249.180.125:8080/api/v1/home/suppliers"),
+          axios.get("http://49.249.180.125:8080/api/v1/home/customers"),
+          axios.get("http://49.249.180.125:8080/api/v1/home/vehicles"),
         ]);
 
         setAllUsers(allUsersResponse.data);

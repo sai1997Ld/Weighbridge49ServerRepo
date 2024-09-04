@@ -28,7 +28,7 @@ const ViewCamera = () => {
   const fetchCameraData = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8080/api/v1/camera/getCameraDetails"
+        "http://49.249.180.125:8080/api/v1/camera/getCameraDetails"
       );
       const data = await response.json();
       setCameras(data);
@@ -44,7 +44,7 @@ const ViewCamera = () => {
         return;
       }
       const response = await fetch(
-        `http://localhost:8080/api/v1/camera/getById/${cameraIdFilter}`
+        `http://49.249.180.125:8080/api/v1/camera/getById/${cameraIdFilter}`
       );
       if (!response.ok) {
         const errorResponse = await response.json();
@@ -70,7 +70,7 @@ const ViewCamera = () => {
       if (result.isConfirmed) {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/v1/camera/deleteById/${cameraId}?userId=${sessionStorage.getItem(
+            `http://49.249.180.125:8080/api/v1/camera/deleteById/${cameraId}?userId=${sessionStorage.getItem(
               "userId"
             )}`,
             {

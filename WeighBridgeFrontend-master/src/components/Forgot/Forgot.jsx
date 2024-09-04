@@ -22,7 +22,7 @@ const Forgot = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/auths/forgot?emailId=${email}`,
+        `http://49.249.180.125:8080/api/v1/auths/forgot?emailId=${email}`,
         {
           method: "POST",
         }
@@ -61,7 +61,7 @@ const Forgot = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:8080/api/v1/auths/forget/reset-password",
+        "http://49.249.180.125:8080/api/v1/auths/forget/reset-password",
         {
           method: "POST",
           headers: {

@@ -39,7 +39,7 @@ const CameraMaster = () => {
   }, [location]);
 
   const fetchCompanies = () => {
-    fetch("http://localhost:8080/api/v1/company/names")
+    fetch("http://49.249.180.125:8080/api/v1/company/names")
       .then((response) => response.json())
       .then((data) => {
         console.log("Company List:", data);
@@ -53,7 +53,7 @@ const CameraMaster = () => {
   const fetchCameraDetails = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/camera/getById/${id}`
+        `http://49.249.180.125:8080/api/v1/camera/getById/${id}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch camera details");
@@ -81,7 +81,7 @@ const CameraMaster = () => {
   };
 
   const fetchSites = (companyName) => {
-    fetch(`http://localhost:8080/api/v1/sites/company/${companyName}`)
+    fetch(`http://49.249.180.125:8080/api/v1/sites/company/${companyName}`)
       .then((response) => response.json())
       .then((data) => {
         console.log("Site List:", data);
@@ -135,10 +135,10 @@ const CameraMaster = () => {
     console.log("Payload sent to the API:", cameraData);
 
     const url = editMode
-      ? `http://localhost:8080/api/v1/camera/updateByCamId/${cameraId}?userId=${sessionStorage.getItem(
+      ? `http://49.249.180.125:8080/api/v1/camera/updateByCamId/${cameraId}?userId=${sessionStorage.getItem(
           "userId"
         )}`
-      : `http://localhost:8080/api/v1/camera/cameraMaster?userId=${sessionStorage.getItem(
+      : `http://49.249.180.125:8080/api/v1/camera/cameraMaster?userId=${sessionStorage.getItem(
           "userId"
         )}`;
 

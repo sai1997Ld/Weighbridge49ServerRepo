@@ -13,7 +13,7 @@ const ViewProduct = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/products")
+    fetch("http://49.249.180.125:8080/api/v1/products")
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));
@@ -21,7 +21,7 @@ const ViewProduct = () => {
 
   const handleViewClick = (productName) => {
     fetch(
-      `http://localhost:8080/api/v1/products/view/${productName}/parameters`
+      `http://49.249.180.125:8080/api/v1/products/view/${productName}/parameters`
     )
       .then((response) => response.json())
       .then((data) => {

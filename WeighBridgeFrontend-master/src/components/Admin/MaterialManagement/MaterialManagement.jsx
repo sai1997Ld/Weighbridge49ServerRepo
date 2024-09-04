@@ -35,7 +35,7 @@ const [selectedAddress, setSelectedAddress] = useState("");
   const userId = sessionStorage.getItem("userId");
 
   const fetchMaterialNames = () => {
-    fetch("http://localhost:8080/api/v1/materials/names")
+    fetch("http://49.249.180.125:8080/api/v1/materials/names")
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -61,7 +61,7 @@ const [selectedAddress, setSelectedAddress] = useState("");
   };
 
   const fetchMaterialTypeNames = (name) => {
-    fetch(`http://localhost:8080/api/v1/materials/${name}/types`)
+    fetch(`http://49.249.180.125:8080/api/v1/materials/${name}/types`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -133,7 +133,7 @@ const [selectedAddress, setSelectedAddress] = useState("");
       materialTypeName: finalMaterialTypeName,
     };
 
-    fetch(`http://localhost:8080/api/v1/materials/withType?userId=${userId}`, {
+    fetch(`http://49.249.180.125:8080/api/v1/materials/withType?userId=${userId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -206,7 +206,7 @@ const [selectedAddress, setSelectedAddress] = useState("");
       })),
     };
 
-    fetch("http://localhost:8080/api/v1/materials", {
+    fetch("http://49.249.180.125:8080/api/v1/materials", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -252,7 +252,7 @@ const [selectedAddress, setSelectedAddress] = useState("");
   };
 
   const fetchSupplierNames = () => {
-    fetch("http://localhost:8080/api/v1/supplier/get/list")
+    fetch("http://49.249.180.125:8080/api/v1/supplier/get/list")
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -277,7 +277,7 @@ const [selectedAddress, setSelectedAddress] = useState("");
       });
   };
   const fetchSupplierAddress = (supplierName) => {
-    fetch(`http://localhost:8080/api/v1/supplier/get/${supplierName}`)
+    fetch(`http://49.249.180.125:8080/api/v1/supplier/get/${supplierName}`)
       .then((response) => {
         if (response.ok) {
           return response.json();

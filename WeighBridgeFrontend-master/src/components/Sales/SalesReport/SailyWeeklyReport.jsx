@@ -40,7 +40,7 @@ const SalesWeeklyReport = () => {
     if (start && end) {
       axios
         .get(
-          `http://localhost:8080/api/v1/weighment/report?startDate=${start}&endDate=${end}&userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/weighment/report?startDate=${start}&endDate=${end}&userId=${userId}`,
           {
             withCredentials: true,
           }

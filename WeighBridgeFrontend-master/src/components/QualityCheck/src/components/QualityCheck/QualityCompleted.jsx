@@ -90,7 +90,7 @@ function QualityCompleted() {
   const fetchAllTransactions = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/qct-completed?&userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/qct-completed?&userId=${userId}`,
         {
           credentials: "include",
         }
@@ -122,7 +122,7 @@ function QualityCompleted() {
   const fetchMaterialOptions = async () => {
     try {
       const materialResponse = await fetch(
-        `http://localhost:8080/api/v1/qualities/fetch-ProductsOrMaterials?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/fetch-ProductsOrMaterials?userId=${userId}`,
         {
           credentials: "include",
         }
@@ -152,7 +152,7 @@ function QualityCompleted() {
   const fetchInboundTransactions = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/inbound-qct-completed?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/inbound-qct-completed?userId=${userId}`,
         {
           credentials: "include",
         }
@@ -172,7 +172,7 @@ function QualityCompleted() {
   const fetchOutboundTransactions = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/outbound-qct-completed?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/outbound-qct-completed?userId=${userId}`,
         {
           credentials: "include",
         }
@@ -258,7 +258,7 @@ function QualityCompleted() {
     if (searchType === "ticketNo") {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/qualities/searchByTicketNo/${searchQuery}?userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/qualities/searchByTicketNo/${searchQuery}?userId=${userId}`,
           {
             credentials: "include",
           }
@@ -282,7 +282,7 @@ function QualityCompleted() {
     } else if (searchType === "vehicleNo") {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/qualities/searchByVehicleNo-qctCompleted/${searchQuery}?userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/qualities/searchByVehicleNo-qctCompleted/${searchQuery}?userId=${userId}`,
           {
             credentials: "include",
           }
@@ -299,7 +299,7 @@ function QualityCompleted() {
     } else if (searchType === "supplier") {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/qualities/searchBySupplierOrCustomer-qctCompleted?supplierOrCustomerName=${searchQuery}?userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/qualities/searchBySupplierOrCustomer-qctCompleted?supplierOrCustomerName=${searchQuery}?userId=${userId}`,
           {
             credentials: "include",
           }
@@ -316,7 +316,7 @@ function QualityCompleted() {
     } else if (searchType === "supplierAddress") {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/qualities/searchBySupplierOrCustomer-qctCompleted?supplierOrCustomerAddress=${searchQuery}&userId=${userId}`,
+          `http://49.249.180.125:8080/api/v1/qualities/searchBySupplierOrCustomer-qctCompleted?supplierOrCustomerAddress=${searchQuery}&userId=${userId}`,
           {
             credentials: "include",
           }
@@ -335,7 +335,7 @@ function QualityCompleted() {
   const handleQualityReportDownload = async (ticketNo) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/report-response/${ticketNo}?userId=${userId}`,);
+        `http://49.249.180.125:8080/api/v1/qualities/report-response/${ticketNo}?userId=${userId}`,);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -421,7 +421,7 @@ function QualityCompleted() {
   const handlePrint = async (ticketNo) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/qualities/report-response/${ticketNo}?userId=${userId}`,
+        `http://49.249.180.125:8080/api/v1/qualities/report-response/${ticketNo}?userId=${userId}`,
         {
           credentials: "include",
         }

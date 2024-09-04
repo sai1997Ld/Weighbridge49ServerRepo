@@ -22,7 +22,7 @@ import PendingIcon from '@mui/icons-material/Pending';
 
 const { Option } = Select;
 const api = axios.create({
-  baseURL: 'http://localhost:8080/api/v1/management',
+  baseURL: 'http://49.249.180.125:8080/api/v1/management',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -168,7 +168,7 @@ const ManagementGateEntry = ({ onConfirmTicket = () => { } }) => {
       return;
     }
   
-    let apiUrl = `http://localhost:8080/api/v1/management/transactions/ongoing?companyName=${encodeURIComponent(selectedCompany)}`;
+    let apiUrl = `http://49.249.180.125:8080/api/v1/management/transactions/ongoing?companyName=${encodeURIComponent(selectedCompany)}`;
   
     if (selectedSiteName) {
       apiUrl += `&siteName=${encodeURIComponent(selectedSiteName)}`;
@@ -205,7 +205,7 @@ const ManagementGateEntry = ({ onConfirmTicket = () => { } }) => {
   // Function to fetch material options from the API
   const fetchMaterialOptions = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/v1/gate/fetch-ProductsOrMaterials", {
+      const response = await fetch("http://49.249.180.125:8080/api/v1/gate/fetch-ProductsOrMaterials", {
         credentials: "include" // Include credentials option here
       });
       const data = await response.json();
@@ -290,7 +290,7 @@ const ManagementGateEntry = ({ onConfirmTicket = () => { } }) => {
 
   useEffect(() => {
     // Initial fetch
-    fetch("http://localhost:8080/api/v1/management/transactions/ongoing?transactionType=inbound&companyName=${company}&siteName=${site},${site}", {
+    fetch("http://49.249.180.125:8080/api/v1/management/transactions/ongoing?transactionType=inbound&companyName=${company}&siteName=${site},${site}", {
       credentials: "include"
     })
       .then(response => {
@@ -340,7 +340,7 @@ const ManagementGateEntry = ({ onConfirmTicket = () => { } }) => {
       return;
     }
 
-    let apiUrl = `http://localhost:8080/api/v1/management/transactions/ongoing?companyName=${selectedCompany}`;
+    let apiUrl = `http://49.249.180.125:8080/api/v1/management/transactions/ongoing?companyName=${selectedCompany}`;
 
     if (selectedSiteName) {
       apiUrl += `&siteName=${selectedSiteName}`;

@@ -76,7 +76,7 @@ function Transporter() {
       transporterAddress,
     };
 
-    fetch(`http://localhost:8080/api/v1/transporter?userId=${userId}`, {
+    fetch(`http://49.249.180.125:8080/api/v1/transporter?userId=${userId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

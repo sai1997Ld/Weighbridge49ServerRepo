@@ -22,7 +22,7 @@ const ViewCustomer = () => {
 
   const fetchCustomerData = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/v1/customers");
+      const response = await fetch("http://49.249.180.125:8080/api/v1/customers");
       const data = await response.json();
       setCustomers(data);
     } catch (error) {
@@ -37,7 +37,7 @@ const ViewCustomer = () => {
         return;
       }
       const response = await fetch(
-        `http://localhost:8080/api/v1/customers/get/id/${customerIdFilter}`
+        `http://49.249.180.125:8080/api/v1/customers/get/id/${customerIdFilter}`
       );
       if (!response.ok) {
         const errorResponse = await response.json();
@@ -69,7 +69,7 @@ const ViewCustomer = () => {
       if (result.isConfirmed) {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/v1/customers/active/${customerId}`,
+            `http://49.249.180.125:8080/api/v1/customers/active/${customerId}`,
             {
               method: "PUT",
             }
@@ -105,7 +105,7 @@ const ViewCustomer = () => {
       if (result.isConfirmed) {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/v1/customers/delete/${customerId}`,
+            `http://49.249.180.125:8080/api/v1/customers/delete/${customerId}`,
             {
               method: "DELETE",
             }
